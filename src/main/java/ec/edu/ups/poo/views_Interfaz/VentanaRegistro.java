@@ -1,4 +1,4 @@
-package ec.edu.ups.poo.views;
+package ec.edu.ups.poo.views_Interfaz;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
