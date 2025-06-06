@@ -1,6 +1,7 @@
 package ec.edu.ups.poo.Registro_UML;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Estudiante {
     private String cedula;
@@ -49,6 +50,27 @@ public class Estudiante {
 
     public List<Calificacion> getCalificaciones() { return calificaciones; }
 
+    public static Estudiante leerDatos() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Cédula del estudiante: ");
+        String cedula = String.valueOf(sc.nextInt());
+        sc.nextLine();
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine();
+        System.out.print("Apellido: ");
+        String apellido = sc.nextLine();
+        Estudiante est = new Estudiante(cedula, nombre, apellido);
+
+        System.out.print("Cuántas calificaciones ingresará?: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < n; i++) {
+            System.out.println("Calificación ->  " + (i + 1));
+            Calificacion c = Calificacion.leerDatos();
+            est.calificaciones.add(c);
+        }
+        return est;
+    }
     @Override
     public String toString() {
         return "Estudiante: " + nombre + " " + apellido + " Cedula: " + cedula +
