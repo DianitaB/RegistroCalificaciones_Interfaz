@@ -68,7 +68,7 @@ public class VentanaRegistro extends Frame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("--Datos ingresados---");
+        System.out.println("---Datos ingresados---");
         System.out.println("Cédula: " + txtCedula.getText());
         System.out.println("Nombre: " + txtNombre.getText());
         System.out.println("Apellido: " + txtApellido.getText());
